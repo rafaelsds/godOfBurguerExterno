@@ -20,8 +20,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private RecyclerView recyclerView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,14 +27,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -47,9 +37,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
-        carregarCard();
 
     }
 
@@ -94,22 +81,13 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_pedido) {
         } else if (id == R.id.nav_promocoes) {
         } else if (id == R.id.nav_avaliacao) {
-//            Intent it = new Intent(MainActivity.this, MainActivity.class);
-//            startActivity(it);
+            Intent it = new Intent(MainActivity.this, AvaliacaoActivity.class);
+            startActivity(it);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void carregarCard(){
-
-        ArrayList<Indicador> list = new ArrayList<Indicador>();
-        list.add(new Indicador(5,5,5));
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new AdapterCardIndicadores(list));
     }
 
 }
