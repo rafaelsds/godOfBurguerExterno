@@ -13,6 +13,7 @@ import android.widget.EditText;
 public class LoginActivity extends Activity {
     private Button btnEntrar;
     private Button btnSair;
+    private Button btnCadastrar;
     private EditText loginEdit;
     private EditText senhaEdit;
 
@@ -22,6 +23,7 @@ public class LoginActivity extends Activity {
 
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
         btnSair = (Button) findViewById(R.id.btnSair);
+        btnCadastrar = (Button)findViewById(R.id.btnCadastrar);
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +42,16 @@ public class LoginActivity extends Activity {
 
             }
         });
+
+
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, UsuarioActivity.class);
+                startActivity(i);
+            }
+        });
+
 
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override

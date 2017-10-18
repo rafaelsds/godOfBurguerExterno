@@ -2,7 +2,6 @@ package com.godofburguer.app.godofburguer;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.godofburguer.app.godofburguer.entidades.Indicador;
 
@@ -93,18 +91,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_lanches) {
-            Intent it = new Intent(MainActivity.this, ListagemLanchesActivity.class);
-            startActivity(it);
-        } else if (id == R.id.nav_insumos) {
-            Intent it = new Intent(MainActivity.this, ListagemInsumosActivity.class);
-            startActivity(it);
-        } else if (id == R.id.nav_fornecedores) {
-            Intent it = new Intent(MainActivity.this, ListagemFornecedoresActivity.class);
-            startActivity(it);
-        } else if (id == R.id.nav_clientes) {
-            Intent it = new Intent(MainActivity.this, ListagemClientesActivity.class);
-            startActivity(it);
+        if (id == R.id.nav_pedido) {
+        } else if (id == R.id.nav_promocoes) {
+        } else if (id == R.id.nav_avaliacao) {
+//            Intent it = new Intent(MainActivity.this, MainActivity.class);
+//            startActivity(it);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

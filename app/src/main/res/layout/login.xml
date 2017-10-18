@@ -46,6 +46,15 @@
             android:background="@color/btn_color"/>
 
         <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:textColor="@color/white"
+            android:text="@string/nao_tem_login"
+            android:layout_marginTop="10dp"
+            android:background="@color/btn_color"/>
+
+        <Button
             android:id="@+id/btnSair"
             android:layout_width="match_parent"
             android:layout_height="35dp"
