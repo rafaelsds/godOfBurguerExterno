@@ -105,7 +105,7 @@
                 android:text="@string/gravar" />
 
             <Button
-                android:id="@+id/btnCancelarUsuario"
+                android:id="@+id/btnCancelarCadUsuario"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
