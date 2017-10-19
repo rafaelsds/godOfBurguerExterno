@@ -2,6 +2,7 @@ package com.godofburguer.app.godofburguer;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -27,11 +28,14 @@ public class AvaliacaoActivity extends Activity {
     }
 
     public void carregarCard(){
+        AdapterCardIndicadores card = new AdapterCardIndicadores();
 
-        ArrayList<Indicador> list = new ArrayList<Indicador>();
-        list.add(new Indicador(5,5,5));
+        card.itemSet("Satisfaçao", "Descricao");
+        card.itemSet("Qualidade", "Descricao");
+        card.itemSet("Eficiencia", "Descricao");
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new AdapterCardIndicadores(list));
+        recyclerView.setAdapter(card);
     }
 }

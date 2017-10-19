@@ -5,11 +5,9 @@ package com.godofburguer.app.godofburguer.entidades;
 public class Indicador {
 
     private Integer satisfacao, qualidade, agilidade;
+    private String titulo, descricao;
 
-    public  Indicador(Integer satisfacao, Integer qualidade, Integer agilidade){
-        this.satisfacao = satisfacao;
-        this.qualidade = qualidade;
-        this.agilidade = agilidade;
+    public  Indicador(){
     }
 
 
@@ -37,4 +35,19 @@ public class Indicador {
         this.agilidade = agilidade;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 }
