@@ -30,10 +30,9 @@ public class AvaliacaoActivity extends Activity {
     public void carregarCard(){
         AdapterCardIndicadores card = new AdapterCardIndicadores();
 
-        card.itemSet("Satisfaçao", "Descricao");
-        card.itemSet("Qualidade", "Descricao");
-        card.itemSet("Eficiencia", "Descricao");
-
+        card.itemSet(getResources().getString(R.string.satisfacao), getResources().getString(R.string.atendimento_cliente));
+        card.itemSet(getResources().getString(R.string.qualidade), getResources().getString(R.string.qualidade_lanche));
+        card.itemSet(getResources().getString(R.string.agilidade), getResources().getString(R.string.tempo_entrega));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(card);

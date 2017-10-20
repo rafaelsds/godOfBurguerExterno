@@ -19,7 +19,6 @@ public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores
         //this.list = list;
     }
 
-
     public void itemSet(String titulo, String descricao) {
         Indicador indicador = new Indicador();
         indicador.setTitulo(titulo);
@@ -33,7 +32,7 @@ public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_indicadores,viewGroup,false);
         return new ViewIndicadores(view);
     }
-    //AdapterView.OnItemClickListener
+
     @Override
     public void onBindViewHolder(ViewIndicadores myViewHolder, int position) {
         Indicador myObject = list.get(position);
