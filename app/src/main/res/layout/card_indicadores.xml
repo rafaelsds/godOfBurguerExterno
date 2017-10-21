@@ -18,7 +18,7 @@
         <android.support.v7.widget.CardView
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/cardSatisfacao"
+            android:id="@+id/card"
             card_view:cardElevation="10dp"
             card_view:cardCornerRadius="10dp"
             card_view:cardPreventCornerOverlap="false"
@@ -111,7 +111,5 @@
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
-
-
     </LinearLayout>
 </ScrollView>

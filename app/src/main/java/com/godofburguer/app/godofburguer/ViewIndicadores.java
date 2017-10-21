@@ -4,13 +4,11 @@ package com.godofburguer.app.godofburguer;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
-
 import com.godofburguer.app.godofburguer.entidades.Indicador;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +18,7 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
     TextView descricaoCard;
     ImageButton btn1, btn2, btn3, btn4, btn5;
     List<ImageButton> btnList = new ArrayList<>();
+    List<Integer> resultadoAvalicao = new ArrayList<>();
 
     public ViewIndicadores(View itemView){
         super(itemView);
@@ -43,7 +42,7 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
 
         tituloCard = (TextView) itemView.findViewById(R.id.titulo_card);
         descricaoCard = (TextView) itemView.findViewById(R.id.descricao_card);
-        cardView = (CardView) itemView.findViewById(R.id.cardSatisfacao);
+        cardView = (CardView) itemView.findViewById(R.id.card);
     }
 
     public void bind(Indicador r){
@@ -64,6 +63,7 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
 
     @Override
     public void onClick(View v) {
+        this.getAdapterPosition();
         setSelectds(Integer.parseInt(v.getTag().toString()));
     }
 }

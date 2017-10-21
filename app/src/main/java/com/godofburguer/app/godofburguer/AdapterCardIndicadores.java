@@ -15,9 +15,7 @@ import java.util.List;
 public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores>{
     List<Indicador> list = new ArrayList<>();
 
-    public AdapterCardIndicadores() {
-        //this.list = list;
-    }
+    public AdapterCardIndicadores() {}
 
     public void itemSet(String titulo, String descricao) {
         Indicador indicador = new Indicador();
@@ -44,9 +42,14 @@ public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores
         myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                System.out.println();
             }
         });
+    }
+
+    public List<Integer> getValoresAvaliacao() {
+        //pendente
+        return null;
     }
 
     @Override
