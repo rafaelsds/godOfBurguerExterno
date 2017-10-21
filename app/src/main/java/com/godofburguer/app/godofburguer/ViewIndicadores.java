@@ -63,7 +63,7 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
 
     @Override
     public void onClick(View v) {
-        this.getAdapterPosition();
+        this.getAdapterPosition(); //Index do card selecionado
         setSelectds(Integer.parseInt(v.getTag().toString()));
     }
 }
