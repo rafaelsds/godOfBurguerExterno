@@ -5,24 +5,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
 import com.godofburguer.app.godofburguer.entidades.Indicador;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores>{
-    List<Indicador> list = new ArrayList<>();
+    List<Indicador> list;
 
-    public AdapterCardIndicadores() {}
-
-    public void itemSet(String titulo, String descricao) {
-        Indicador indicador = new Indicador();
-        indicador.setTitulo(titulo);
-        indicador.setDescricao(descricao);
-
-        list.add(indicador);
+    public AdapterCardIndicadores(List<Indicador> list) {
+        this.list = list;
     }
 
     @Override
@@ -35,21 +26,6 @@ public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores
     public void onBindViewHolder(ViewIndicadores myViewHolder, int position) {
         Indicador myObject = list.get(position);
         myViewHolder.bind(myObject);
-
-        myViewHolder.tituloCard.setText(myObject.getTitulo());
-        myViewHolder.descricaoCard.setText(myObject.getDescricao());
-
-        myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println();
-            }
-        });
-    }
-
-    public List<Integer> getValoresAvaliacao() {
-        //pendente
-        return null;
     }
 
     @Override

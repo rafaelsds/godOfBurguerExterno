@@ -44,6 +44,6 @@
     <string name="nao_tem_login">Não tem Login? Cadastre-se</string>
     <string name="informe_login">Informe o login</string>
     <string name="informe_senha">Informe a senha</string>
-    <string name="avaliar">Avaliar</string>
-
+    <string name="enviar">Enviar</string>
+    <string name="promocoes">Promoções</string>
 </resources>

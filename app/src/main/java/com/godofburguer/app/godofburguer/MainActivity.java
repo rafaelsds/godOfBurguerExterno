@@ -78,12 +78,20 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Intent it = new Intent();
+
         if (id == R.id.nav_pedido) {
+            it = new Intent(MainActivity.this, PedidosActivity.class);
         } else if (id == R.id.nav_promocoes) {
+            it = new Intent(MainActivity.this, PromocoesActivity.class);
         } else if (id == R.id.nav_avaliacao) {
-            Intent it = new Intent(MainActivity.this, AvaliacaoActivity.class);
-            startActivity(it);
+            it = new Intent(MainActivity.this, AvaliacaoActivity.class);
+        } else {
+            finish();
+            return false;
         }
+
+        startActivity(it);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

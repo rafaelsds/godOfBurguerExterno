@@ -13,7 +13,9 @@
             android:title="@string/avaliacao" />
     </group>
 
-    <item android:title="Sair">
+    <item
+        android:title="Sair"
+        android:id="@+id/nav_sair">
     </item>
 
 </menu>
