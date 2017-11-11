@@ -18,7 +18,6 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
     TextView descricaoCard;
     ImageButton btn1, btn2, btn3, btn4, btn5;
     List<ImageButton> btnList = new ArrayList<>();
-    List<Integer> resultadoAvalicao = new ArrayList<>();
 
     public ViewIndicadores(View itemView){
         super(itemView);
@@ -42,7 +41,7 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
 
         tituloCard = (TextView) itemView.findViewById(R.id.titulo_card);
         descricaoCard = (TextView) itemView.findViewById(R.id.descricao_card);
-        cardView = (CardView) itemView.findViewById(R.id.card);
+        cardView = (CardView) itemView.findViewById(R.id.cardSatisfacao);
     }
 
     public void bind(Indicador r){
@@ -63,7 +62,6 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
 
     @Override
     public void onClick(View v) {
-        this.getAdapterPosition(); //Index do card selecionado
         setSelectds(Integer.parseInt(v.getTag().toString()));
     }
 }

@@ -18,33 +18,23 @@ import java.util.ArrayList;
 
 public class AvaliacaoActivity extends Activity {
 
-    private Button btnAvaliar;
-    private AdapterCardIndicadores card;
     private RecyclerView recyclerView;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avaliacao);
 
-        card = new AdapterCardIndicadores();
-        btnAvaliar = (Button) findViewById(R.id.avaliar);
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
         carregarCard();
-
-        btnAvaliar.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-        public void onClick(View v) {
-                card.getValoresAvaliacao();
-            }
-        });
 
     }
 
     public void carregarCard(){
-        card.itemSet(getString(R.string.satisfacao), getString(R.string.atendimento_cliente));
-        card.itemSet(getString(R.string.qualidade), getString(R.string.qualidade_lanche));
-        card.itemSet(getString(R.string.agilidade), getString(R.string.tempo_entrega));
+        AdapterCardIndicadores card = new AdapterCardIndicadores();
+
+        card.itemSet(getResources().getString(R.string.satisfacao), getResources().getString(R.string.atendimento_cliente));
+        card.itemSet(getResources().getString(R.string.qualidade), getResources().getString(R.string.qualidade_lanche));
+        card.itemSet(getResources().getString(R.string.agilidade), getResources().getString(R.string.tempo_entrega));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(card);
