@@ -36,21 +36,15 @@ public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores
         myViewHolder.descricaoCard.setText(myObject.getDescricao());
 
         myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                System.out.println();
+
             }
-       });
+        });
      }
 
     @Override
     public int getItemCount() {
-        return 0;
-    }
-
-    public List<Integer> getValoresAvaliacao() {
-        //pendente
-        return null;
+        return list.size();
     }
 }

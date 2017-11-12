@@ -18,8 +18,7 @@
         <android.support.v7.widget.CardView
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card"
-
+            android:id="@+id/cardSatisfacao"
             card_view:cardElevation="10dp"
             card_view:cardCornerRadius="10dp"
             card_view:cardPreventCornerOverlap="false"
@@ -31,7 +30,8 @@
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <TextView
                     android:layout_width="match_parent"
@@ -67,55 +67,51 @@
                     android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/btn1"
                         android:layout_margin="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/icon_star"
-                        android:id="@+id/btn1"
                         android:tag="1"
-                        android:onClick="teste"/>
+                        android:onClick="teste"
+                        />
 
                     <ImageButton
+                        android:id="@+id/btn2"
                         android:layout_margin="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/icon_star"
-                        android:id="@+id/btn2"
                         android:tag="2"/>
 
                     <ImageButton
+                        android:id="@+id/btn3"
                         android:layout_margin="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/icon_star"
-                        android:id="@+id/btn3"
                         android:tag="3"/>
 
                     <ImageButton
+                        android:id="@+id/btn4"
                         android:layout_margin="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/icon_star"
-                        android:id="@+id/btn4"
                         android:tag="4"/>
 
                     <ImageButton
+                        android:id="@+id/btn5"
                         android:layout_margin="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/icon_star"
-                        android:id="@+id/btn5"
                         android:tag="5"/>
 
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
-        <Button
-            android:id="@+id/btnAvaliar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/avaliar"/>
 
     </LinearLayout>
 </ScrollView>

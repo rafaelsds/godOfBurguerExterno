@@ -13,8 +13,6 @@ import com.godofburguer.app.godofburguer.controller.UsuariosController;
 import com.godofburguer.app.godofburguer.entidades.Usuarios;
 
 import java.util.List;
-
-import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -54,9 +52,13 @@ public class LoginActivity extends Activity {
 
 
     public void botoes(){
+
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loginEdit = (EditText) findViewById(R.id.editUser);
+                senhaEdit = (EditText) findViewById(R.id.editSenha);
+
                 if (validaLogin(loginEdit.getText().toString(),
                         senhaEdit.getText().toString())){
 
@@ -64,8 +66,11 @@ public class LoginActivity extends Activity {
                     logar();
 
                 }
+
+
             }
         });
+
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +80,7 @@ public class LoginActivity extends Activity {
                 finish();
             }
         });
+
 
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
