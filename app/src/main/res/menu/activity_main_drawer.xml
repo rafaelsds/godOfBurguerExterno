@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_perfil"
+            android:title="@string/editar_perdil" />
         <item
             android:id="@+id/nav_pedido"
             android:title="@string/realizar_pedido" />
@@ -13,9 +17,5 @@
             android:title="@string/avaliacao" />
     </group>
 
-    <item
-        android:title="Sair"
-        android:id="@+id/nav_sair">
-    </item>
 
 </menu>

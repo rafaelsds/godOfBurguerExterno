@@ -1,6 +1,7 @@
 package com.godofburguer.app.godofburguer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -40,6 +41,13 @@ public class AvaliacaoActivity extends Activity {
         });
 
     }
+
+
+    @Override
+    public void onBackPressed(){
+        finish();
+    }
+
 
     public void carregarCard(){
         card.itemSet(getString(R.string.satisfacao), getString(R.string.atendimento_cliente));

@@ -1,18 +1,37 @@
 package com.godofburguer.app.godofburguer.entidades;
 
 
+import java.io.Serializable;
 
-public class Usuarios {
+public class Usuarios implements Serializable{
 
-    private String nome, endereco, telefone, email, login, senha;
+    private String nome, endereco, telefone, email, login, senha, tipo, id;
 
-    public Usuarios(String nome, String endereco, String telefone, String email, String login, String senha) {
+    public Usuarios(String nome, String endereco, String telefone, String email, String login, String senha, String tipo, String id) {
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.email = email;
         this.login = login;
         this.senha = senha;
+        this.tipo = tipo;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getNome() {

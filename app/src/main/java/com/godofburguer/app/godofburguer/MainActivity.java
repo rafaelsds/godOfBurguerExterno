@@ -14,11 +14,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.godofburguer.app.godofburguer.entidades.Indicador;
+import com.godofburguer.app.godofburguer.entidades.Usuarios;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Intent intentCadastroUsuario;
+    Usuarios usuarioLogado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +41,14 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        intentCadastroUsuario = getIntent();
+
+        if(intentCadastroUsuario.getSerializableExtra("usuario") != null){
+            usuarioLogado = (Usuarios) intentCadastroUsuario.getSerializableExtra("usuario");
+        }
 
     }
+
 
     @Override
     public void onBackPressed() {
@@ -50,12 +60,15 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+
+//    Menu Lateral não está sendo utilizado
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+//    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -86,6 +99,9 @@ public class MainActivity extends AppCompatActivity
             it = new Intent(MainActivity.this, PromocoesActivity.class);
         } else if (id == R.id.nav_avaliacao) {
             it = new Intent(MainActivity.this, AvaliacaoActivity.class);
+        } else if (id == R.id.nav_perfil) {
+            it = new Intent(MainActivity.this, CadastroUserActivity.class);
+            it.putExtra("usuario", usuarioLogado);
         } else {
             finish();
             return false;

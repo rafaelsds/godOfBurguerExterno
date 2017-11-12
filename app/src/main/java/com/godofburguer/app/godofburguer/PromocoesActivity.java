@@ -1,6 +1,7 @@
 package com.godofburguer.app.godofburguer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,4 +16,11 @@ public class PromocoesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promocoes);
     }
+
+    @Override
+    public void onBackPressed(){
+        finish();
+    }
+
+
 }

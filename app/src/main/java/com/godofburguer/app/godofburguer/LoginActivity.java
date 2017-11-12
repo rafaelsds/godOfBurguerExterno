@@ -1,6 +1,7 @@
 package com.godofburguer.app.godofburguer;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import com.godofburguer.app.godofburguer.entidades.Usuarios;
 
 import java.util.List;
 
-import dmax.dialog.SpotsDialog;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,7 +22,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by gustavo on 05/10/17.
+ * Rafael Silva
  */
 
 public class LoginActivity extends Activity {
@@ -35,21 +36,27 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+        inicialise();
+        botoes();
+
+    }
+
+
+    public void inicialise(){
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
         btnSair = (Button) findViewById(R.id.btnSair);
         btnCadastrar = (Button)findViewById(R.id.btnCadastrar);
-
         loginEdit = (EditText) findViewById(R.id.editUser);
         senhaEdit = (EditText) findViewById(R.id.editSenha);
-
         loginEdit.setText("adm");
         senhaEdit.setText("adm");
+    }
 
+
+    public void botoes(){
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 if (validaLogin(loginEdit.getText().toString(),
                         senhaEdit.getText().toString())){
 
@@ -57,20 +64,17 @@ public class LoginActivity extends Activity {
                     logar();
 
                 }
-
-
             }
         });
-
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(LoginActivity.this, CadastroUserActivity.class);
                 startActivity(i);
+                finish();
             }
         });
-
 
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +83,7 @@ public class LoginActivity extends Activity {
             }
         });
     }
+
 
     public boolean validaLogin(String login, String senha) {
         Boolean isValid = true;
@@ -101,20 +106,31 @@ public class LoginActivity extends Activity {
             @Override
             public void call(List<Usuarios> objeto) {
                 Boolean logar=false;
+                Usuarios usuario=null;
                 for(Usuarios r : objeto){
 
-                    if(loginEdit.getText().toString().trim().toUpperCase().equals(r.getLogin().toUpperCase()) && senhaEdit.getText().toString().trim().toUpperCase().equals(r.getSenha().toUpperCase())){
+                    if(r.getTipo().equals("E") && loginEdit.getText().toString().trim().toUpperCase().equals(r.getLogin().toUpperCase()) && senhaEdit.getText().toString().trim().toUpperCase().equals(r.getSenha().toUpperCase())){
                         logar=true;
+                        usuario = new Usuarios(r.getNome(),r.getEndereco(), r.getTelefone(), r.getEmail(), r.getLogin(), r.getSenha(), r.getTipo(), r.getId());
                     }
 
                 }
 
                 if(logar){
                     Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                    i.putExtra("usuario", usuario);
                     startActivity(i);
                     finish();
                 }else {
-                    Toast.makeText(LoginActivity.this, "Usuário e senha não conferem!", Toast.LENGTH_SHORT).show();
+
+                    new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Oops...")
+                            .setContentText("Usuário e senha não conferem!")
+                            .show();
+
+                    senhaEdit.setText("");
+                    senhaEdit.requestFocus();
+
                 }
 
             }
@@ -132,8 +148,10 @@ public class LoginActivity extends Activity {
 
         Call<List<Usuarios>> request = controler.list();
 
-        final android.app.AlertDialog progressDoalog = new SpotsDialog(this, R.style.ProgressDialogCustom);
-
+        final SweetAlertDialog progressDoalog = new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.PROGRESS_TYPE);
+        progressDoalog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+        progressDoalog.setTitleText("Carregando...");
+        progressDoalog.setCancelable(false);
         progressDoalog.show();
 
         request.enqueue(new Callback<List<Usuarios>>() {
