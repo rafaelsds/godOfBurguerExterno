@@ -30,4 +30,8 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ButtonBarKB">
+        <item name="background">@null</item>
+    </style>
+
 </resources>

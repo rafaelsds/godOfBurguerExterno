@@ -102,7 +102,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_perfil) {
             it = new Intent(MainActivity.this, CadastroUserActivity.class);
             it.putExtra("usuario", usuarioLogado);
-        } else {
+        } else if (id == R.id.nav_sobre){
+            it = new Intent(MainActivity.this, SobreActivity.class);
+        }else {
             finish();
             return false;
         }

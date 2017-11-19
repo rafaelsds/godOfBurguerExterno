@@ -48,4 +48,11 @@
     <string name="promocoes">Promoções</string>
     <string name="avaliar">Avaliar</string>
     <string name="editar_perdil">Editar Perfil</string>
+    <string name="sobre">Sobre</string>
+    <string name="como_chegar">Como chegar</string>
+    <string name="fale_conosco">Email</string>
+    <string name="sobre_descricao_loja">Lanchonete <i>God Of Burger©</i>\nFone: (48) 99999-9999</string>
+    <string name="sobre_descricao_final">Aplicativo desenvolvido para disciplina de Programação para dispositivos móveis.\n\n<b>Acadêmicos</b>: Adriel Cardoso, Alcino Nuno José, Ana Claudia Medeiros, Gustavo Fabro, Rafael Silva dos Santos.</string>
+
+
 </resources>
