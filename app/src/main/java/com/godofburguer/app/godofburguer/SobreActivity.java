@@ -24,9 +24,8 @@ public class SobreActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"godofburger@contato.com.br"});
-                emailIntent.setType("message/rfc822");
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:godofburger@contato.com"));
                 startActivity(emailIntent);
             }
         });
