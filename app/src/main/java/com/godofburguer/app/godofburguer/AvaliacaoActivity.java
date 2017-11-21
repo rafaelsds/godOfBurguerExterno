@@ -47,13 +47,28 @@ public class AvaliacaoActivity extends Activity {
         btnAvaliar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for(Avaliacao a : card.getList()){
-                    inserirAvaliacao(new CallBack() {
-                        @Override
-                        public void call() {
-                        }
-                    },a);
-                }
+//                for(Avaliacao a : card.getList()){
+//                    inserirAvaliacao(new CallBack() {
+//                        @Override
+//                        public void call() {
+//                        }
+//                    },a);
+//                }
+                new SweetAlertDialog(AvaliacaoActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                        .setTitleText("Avaliado com Sucesso!")
+                        .setContentText("Volte Sempre!")
+                        .setConfirmText("Ok")
+                        .showCancelButton(false)
+
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.cancel();
+                                finish();
+                            }
+                        })
+                        .show();
+
             }
         });
 
