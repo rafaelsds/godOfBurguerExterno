@@ -4,11 +4,10 @@ package com.godofburguer.app.godofburguer;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
-import com.godofburguer.app.godofburguer.entidades.Indicador;
+import com.godofburguer.app.godofburguer.entidades.Avaliacao;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +43,7 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
         cardView = (CardView) itemView.findViewById(R.id.cardSatisfacao);
     }
 
-    public void bind(Indicador r){
+    public void bind(Avaliacao r){
     }
 
     public void setSelectds(int pontos) {

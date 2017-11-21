@@ -5,18 +5,30 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-import com.godofburguer.app.godofburguer.entidades.Indicador;
+
+import com.godofburguer.app.godofburguer.entidades.Avaliacao;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores>{
-    List<Indicador> list = new ArrayList<>();
+    List<Avaliacao> list = new ArrayList<>();
+
+    /*
+        =========== Implementar ===========
+        Deve dar um set com a quantidade de pontos de cada card da list
+        setAgilidade
+        setQualidade
+        setSatisfacao
+    */
+
+    public List<Avaliacao> getList(){
+        return list;
+    }
 
     public AdapterCardIndicadores() {}
 
     public void itemSet(String titulo, String descricao) {
-        Indicador indicador = new Indicador();
+        Avaliacao indicador = new Avaliacao();
         indicador.setTitulo(titulo);
         indicador.setDescricao(descricao);
 
@@ -30,7 +42,7 @@ public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores
     }
 
     public void onBindViewHolder(ViewIndicadores myViewHolder, int position) {
-        Indicador myObject = list.get(position);
+        Avaliacao myObject = list.get(position);
         myViewHolder.bind(myObject);
         myViewHolder.tituloCard.setText(myObject.getTitulo());
         myViewHolder.descricaoCard.setText(myObject.getDescricao());
@@ -38,7 +50,6 @@ public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores
         myViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
      }
