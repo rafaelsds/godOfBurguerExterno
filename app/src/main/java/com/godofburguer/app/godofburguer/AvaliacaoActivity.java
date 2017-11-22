@@ -47,13 +47,12 @@ public class AvaliacaoActivity extends Activity {
         btnAvaliar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for(Avaliacao a : card.getList()){
                     inserirAvaliacao(new CallBack() {
                         @Override
                         public void call() {
                         }
-                    },a);
-                }
+                    },card.getAvaliacao());
+
             }
         });
 
