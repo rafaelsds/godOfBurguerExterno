@@ -12,17 +12,15 @@ import java.util.List;
 
 public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores>{
     List<Avaliacao> list = new ArrayList<>();
+    List<ViewIndicadores> myViewHoldersReference = new ArrayList<>();
+    private Avaliacao avaliacao = new Avaliacao();
 
-    /*
-        =========== Implementar ===========
-        Deve dar um set com a quantidade de pontos de cada card da list
-        setAgilidade
-        setQualidade
-        setSatisfacao
-    */
+    public Avaliacao getAvaliacao(){
+        avaliacao.setSatisfacao(myViewHoldersReference.get(0).getPontuacao());
+        avaliacao.setQualidade(myViewHoldersReference.get(1).getPontuacao());
+        avaliacao.setAgilidade(myViewHoldersReference.get(2).getPontuacao());
 
-    public List<Avaliacao> getList(){
-        return list;
+        return avaliacao;
     }
 
     public AdapterCardIndicadores() {}
@@ -43,6 +41,8 @@ public class AdapterCardIndicadores extends RecyclerView.Adapter<ViewIndicadores
 
     public void onBindViewHolder(ViewIndicadores myViewHolder, int position) {
         Avaliacao myObject = list.get(position);
+        myViewHoldersReference.add(myViewHolder);
+
         myViewHolder.bind(myObject);
         myViewHolder.tituloCard.setText(myObject.getTitulo());
         myViewHolder.descricaoCard.setText(myObject.getDescricao());

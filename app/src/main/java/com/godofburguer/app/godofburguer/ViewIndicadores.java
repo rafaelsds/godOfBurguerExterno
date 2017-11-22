@@ -17,6 +17,7 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
     TextView descricaoCard;
     ImageButton btn1, btn2, btn3, btn4, btn5;
     List<ImageButton> btnList = new ArrayList<>();
+    int pontuacao;
 
     public ViewIndicadores(View itemView){
         super(itemView);
@@ -48,6 +49,9 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
 
     public void setSelectds(int pontos) {
         clearAllBtns();
+
+        pontuacao = pontos;
+
         for (int i = 0; i < pontos; i++) {
             btnList.get(i).setBackgroundResource(R.drawable.icon_star_selected);
         }
@@ -62,5 +66,9 @@ public class ViewIndicadores extends RecyclerView.ViewHolder implements OnClickL
     @Override
     public void onClick(View v) {
         setSelectds(Integer.parseInt(v.getTag().toString()));
+    }
+
+    public int getPontuacao() {
+        return this.pontuacao;
     }
 }
