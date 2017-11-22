@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Rafael Silva-->
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardCarrinho"
+                card_view:cardElevation="10dp"
+                card_view:cardCornerRadius="8dp"
+                card_view:cardPreventCornerOverlap="false"
+                card_view:cardUseCompatPadding="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:text="@string/lanches"
+                            android:id="@+id/descricaoLancheCarrinho"
+                            android:gravity="left"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:textColor="@color/black"
+                            android:textSize="25dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.6"
+                                android:gravity="center">
+
+                                <Button
+                                    android:id="@+id/btnRemoveCarrinho"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:text="-"
+                                    style="@style/ButtonMore"/>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvtQtCarrinho"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="1"
+                                android:layout_weight="0.6"
+                                />
+
+
+                            <LinearLayout
+                                android:id="@+id/bttRemoverCarinho"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.6"
+                                android:gravity="center">
+
+                                <Button
+                                    android:id="@+id/btnAddCarrinho"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:text="+"
+                                    style="@style/ButtonMore"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="@string/insumos"
+                        android:id="@+id/tvtInsumosCarrinho"
+                        android:gravity="left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:gravity="left">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/valor_unitario"/>
+
+                            <TextView
+                                android:id="@+id/tvtValorLancheCarrinho"
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:gravity="right">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/valor_unitario"/>
+
+                            <TextView
+                                android:id="@+id/tvtValorTotalLancheCarrinho"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@color/colorPrimary">
+                    </View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="right"
+                        android:layout_margin="10dp">
+
+                        <EditText
+                            android:id="@+id/tvtObservacaoCarrinho"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/observacao"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

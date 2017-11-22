@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -16,7 +15,6 @@ import com.godofburguer.app.godofburguer.controller.RootController;
 import com.godofburguer.app.godofburguer.entidades.Avaliacao;
 
 import java.util.HashMap;
-import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
@@ -30,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class AvaliacaoActivity extends Activity {
-    private Adapter viewCardAdapter;
+
     private RecyclerView recyclerView;
     private Button btnAvaliar;
     private AdapterCardIndicadores card;
@@ -49,19 +47,23 @@ public class AvaliacaoActivity extends Activity {
         btnAvaliar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inserirAvaliacao(new CallBack() {
-                    @Override
-                    public void call() {
-                    }
-                }, card.getAvaliacao());
+                for(Avaliacao a : card.getList()){
+                    inserirAvaliacao(new CallBack() {
+                        @Override
+                        public void call() {
+                        }
+                    },a);
+                }
             }
         });
 
     }
 
+
     public interface CallBack{
         void call();
     }
+
 
     public void inserirAvaliacao(final CallBack callback, Avaliacao a) {
         Retrofit retrofit = new Retrofit.Builder()
