@@ -92,6 +92,22 @@ public class AvaliacaoActivity extends Activity {
                     Toast.makeText(AvaliacaoActivity.this, response.code(), Toast.LENGTH_SHORT).show();
                 }else{
                     progressDoalog.dismiss();
+
+                    new SweetAlertDialog(AvaliacaoActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("Avaliado com Sucesso!")
+                            .setContentText("Volte Sempre!")
+                            .setConfirmText("Ok")
+                            .showCancelButton(false)
+
+                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                    sweetAlertDialog.cancel();
+                                    finish();
+                                }
+                            })
+                            .show();
+
                 }
             }
 
