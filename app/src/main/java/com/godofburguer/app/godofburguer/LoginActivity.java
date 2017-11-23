@@ -48,8 +48,6 @@ public class LoginActivity extends Activity {
         btnCadastrar = (Button)findViewById(R.id.btnCadastrar);
         loginEdit = (EditText) findViewById(R.id.editUser);
         senhaEdit = (EditText) findViewById(R.id.editSenha);
-        loginEdit.setText("adm");
-        senhaEdit.setText("adm");
     }
 
 

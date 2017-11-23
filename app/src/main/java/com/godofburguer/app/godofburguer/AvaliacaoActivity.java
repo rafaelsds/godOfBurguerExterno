@@ -74,7 +74,7 @@ public class AvaliacaoActivity extends Activity {
 
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("qualidade", a.getQualidade().toString());
-        hashMap.put("satisfacao", a.getAgilidade().toString());
+        hashMap.put("satisfacao", a.getSatisfacao().toString());
         hashMap.put("agilidade", a.getAgilidade().toString());
 
         final SweetAlertDialog progressDoalog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
