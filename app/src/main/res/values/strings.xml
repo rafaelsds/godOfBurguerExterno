@@ -52,11 +52,16 @@
     <string name="como_chegar">Como chegar</string>
     <string name="fale_conosco">Email</string>
     <string name="sobre_descricao_loja">Lanchonete <i>God Of Burger©</i>\nFone: (48) 99999-9999</string>
-    <string name="sobre_descricao_final">Aplicativo desenvolvido para disciplina de Programação para dispositivos móveis.\n\n<b>Acadêmicos</b>: Adriel Cardoso, Alcino Nuno José, Ana Claudia Medeiros, Gustavo Fabro, Rafael Silva dos Santos.</string>
+    <string name="sobre_descricao_final">Aplicativo desenvolvido para disciplina de Programação para dispositivos móveis.\n\n<b>Acadêmicos</b>: Adriel Cardoso, Alcino Nuno José, Ana Claudia Medeiros, Gustavo Fabro, Rafael Silva.</string>
     <string name="a_partir_de">A partir de</string>
     <string name="adicionar_carrinho">Adicionar no Carrinho</string>
     <string name="finalizar_pedido">Finalizar Pedido</string>
     <string name="valor_unitario">Valor Unitário</string>
+    <string name="valor_total">Valor Total</string>
     <string name="total">Total</string>
     <string name="observacao">Observação</string>
+    <string name="hamburguer_mega_man">Hambúrguer Mega Man Prime</string>
+    <string name="hamburguer_bacon">Hambúrguer Sonic Bacon Supremo</string>
+    <string name="costela">Combo Kratos Supreme Costela</string>
+    <string name="combo">Combo HeadShot Barbecue</string>
 </resources>

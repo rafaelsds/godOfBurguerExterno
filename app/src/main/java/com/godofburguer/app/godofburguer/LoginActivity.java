@@ -1,6 +1,7 @@
 package com.godofburguer.app.godofburguer;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,8 @@ public class LoginActivity extends Activity {
     private Button btnCadastrar;
     private EditText loginEdit;
     private EditText senhaEdit;
+    private SharedPreferences.Editor editor;
+    private SharedPreferences prefs;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,11 @@ public class LoginActivity extends Activity {
         btnCadastrar = (Button)findViewById(R.id.btnCadastrar);
         loginEdit = (EditText) findViewById(R.id.editUser);
         senhaEdit = (EditText) findViewById(R.id.editSenha);
+
+        editor = getSharedPreferences("usuario", MODE_PRIVATE).edit();
+        prefs = getSharedPreferences("usuario", MODE_PRIVATE);
+
+        loginEdit.setText(prefs.getString("login",""));
     }
 
 
@@ -118,6 +126,8 @@ public class LoginActivity extends Activity {
                     if(r.getTipo().equals("E") && loginEdit.getText().toString().trim().toUpperCase().equals(r.getLogin().toUpperCase()) && senhaEdit.getText().toString().trim().toUpperCase().equals(r.getSenha().toUpperCase())){
                         logar=true;
                         usuario = new Usuarios(r.getNome(),r.getEndereco(), r.getTelefone(), r.getEmail(), r.getLogin(), r.getSenha(), r.getTipo(), r.getId());
+                        editor.putString("login",r.getLogin());
+                        editor.apply();
                     }
 
                 }

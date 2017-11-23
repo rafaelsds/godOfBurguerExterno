@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity
             it = new Intent(MainActivity.this, PedidosActivity.class);
         } else if (id == R.id.nav_promocoes) {
             it = new Intent(MainActivity.this, PromocoesActivity.class);
-        } else if (id == R.id.nav_avaliacao) {
-            it = new Intent(MainActivity.this, AvaliacaoActivity.class);
+        //} else if (id == R.id.nav_avaliacao) {
+          //  it = new Intent(MainActivity.this, AvaliacaoActivity.class);
         } else if (id == R.id.nav_perfil) {
             it = new Intent(MainActivity.this, CadastroUserActivity.class);
             it.putExtra("usuario", usuarioLogado);
